@@ -92,6 +92,8 @@
     const tops = [
       [310, 470, 2], [395, 360, 2], [500, 300, 3], [600, 350, 2],
       [700, 420, 2], [740, 500, 1], [350, 560, 1], [650, 560, 1],
+      [280, 380, 2], [720, 300, 2], [450, 420, 2], [570, 500, 1],
+      [330, 320, 2], [670, 480, 2],
     ];
     for (const [tx, ty, sides] of tops) {
       const bx = 485 + r() * 30;
@@ -180,7 +182,7 @@
       }
     };
     // a few sprigs tucked behind the lilies, ending just inside the bouquet's outline
-    for (const end of [[210, 560], [270, 340], [420, 215], [600, 205], [750, 320], [810, 560]]) {
+    for (const end of [[210, 560], [270, 340], [420, 215], [600, 205], [750, 320], [810, 560], [160, 450], [800, 400]]) {
       const base = [490 + r() * 20, 820 - r() * 40];
       const ang = Math.atan2(end[1] - base[1], end[0] - base[0]);
       sprig(base, ang, Math.hypot(end[0] - base[0], end[1] - base[1]), RUSCUS_START + r() * 0.8, 0);
@@ -191,6 +193,7 @@
     const clouds = [
       [340, 460], [660, 430], [500, 330], [280, 610], [740, 610],
       [450, 610], [590, 640], [400, 340], [620, 340], [520, 520],
+      [360, 280], [680, 500], [480, 200], [320, 540], [700, 350],
     ];
     clouds.forEach(([cx, cy], ci) => {
       const base = [485 + r() * 30, 1000 + r() * 60];
@@ -546,6 +549,7 @@
   const replay = () => { t0 = performance.now(); };
   window.addEventListener('resize', resize);
   screen.addEventListener('click', replay);
+  document.getElementById('actionBtn').addEventListener('click', replay);
   window.addEventListener('keydown', (e) => {
     if (e.key === ' ' || e.key === 'r') replay();
     if (e.key === 'p' || e.key === 'c') { palette = (palette + 1) % PALETTES.length; replay(); }

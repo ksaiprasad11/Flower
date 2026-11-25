@@ -7,10 +7,34 @@
 <style>
   html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
   canvas { display: block; width: 100vw; height: 100vh; cursor: pointer; }
+  #actionBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #f39ab2 0%, #d99aa6 100%);
+    color: #fff;
+    border: 2px solid #f9c3d2;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(243, 154, 178, 0.3);
+  }
+  #actionBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 154, 178, 0.5);
+  }
+  #actionBtn:active {
+    transform: translateY(0);
+  }
 </style>
 </head>
 <body>
 <canvas id="screen"></canvas>
+<button id="actionBtn">Bloom Again</button>
 <script src="bouquet.js"></script>
 </body>
 </html>
